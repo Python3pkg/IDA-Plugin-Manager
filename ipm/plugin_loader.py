@@ -20,7 +20,7 @@ class PluginLoaderEx(idaapi.plugin_t):
         message("Loading settings from IDASettings('PluginLoader')")
 
 
-        for name, path in settings.iteritems():
+        for name, path in settings.items():
             message('Loading {} from {}'.format(name, path))
             idaapi.load_plugin(path)
 

@@ -51,15 +51,15 @@ def main():
             del settings.user[plugin_name]
 
     if arguments['list']:
-        for name, path in settings.iteritems():
-            print name, path
+        for name, path in settings.items():
+            print(name, path)
 
     if arguments['initialize']:
         # Copy `plugin_loader.py` to IDA's plugin directory.
         ida_path = arguments['<ida-path>']
         target_path = os.path.join(ida_path, 'plugins', 'plugin_loader.py')
         source_path = os.path.join(os.path.dirname(__file__), 'plugin_loader.py')
-        print 'Installing the plugin loader to {}'.format(target_path)
+        print('Installing the plugin loader to {}'.format(target_path))
         shutil.copyfile(source_path, target_path)
 
     if arguments['terminate']:
